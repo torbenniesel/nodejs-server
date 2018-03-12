@@ -11,7 +11,7 @@ const { PerformanceObserver } = require('perf_hooks');
 
 
 const { HTTP2_HEADER_PATH } = http2.constants;
-const PORT = process.env.PORT | 443;
+const PORT = process.env.PORT | 8080;
 
 const options = {
     key: fs.readFileSync('ssl/server.key'),
@@ -25,10 +25,19 @@ const server = http2.createSecureServer(options, onRequest);
 
 let now = 0;
 // Listen to Port X Test
-server.listen(PORT, function(){
+
+// server.listen(PORT, function(){
+//     now = new Date().getTime();
+//     console.log("Server started on Port "+PORT);
+// });
+
+if (module === require.main) {
+    //Start the server
+    server.listen(PORT, function(){
     now = new Date().getTime();
     console.log("Server started on Port "+PORT);
-});
+    });
+}
 
 // Request handler
 function onRequest(req,res) {
