@@ -1,0 +1,20 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "My first Node HTTP2 Webapp",
+  "main": "server/server.js",
+  "scripts": {
+    "server": "nodemon server/server.js"
+  },
+  "nodemonConfig": {
+    "ignore": ["old/*", "functions.js"]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mime": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  }
+}
