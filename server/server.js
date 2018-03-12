@@ -24,7 +24,7 @@ const options = {
 const server = http2.createSecureServer(options, onRequest);
 
 let now = 0;
-// Listen to Port X
+// Listen to Port X 
 server.listen(PORT, function(){
     now = new Date().getTime();
     console.log("Server started on Port "+PORT);
